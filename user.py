@@ -6,7 +6,7 @@ class User ():
         self.age = age
 
     def create(self):
-        querytoerrors = "SELECT COUNT(*) FROM `demoniac` WHERE id = %s"
+        querytoerrors = "SELECT COUNT(*) FROM `users` WHERE id = %s"
         if db.cursor().execute(querytoerrors, self.id) == 0:
             querytocreate = "INSERT INTO `demoniac` (id, age) VALUES (%s, %s);"
             db.cursor().execute(querytocreate, (self.id, self.age))  
