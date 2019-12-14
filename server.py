@@ -16,6 +16,12 @@ def getuser(self, id):
     data = cursor.fetchone()
     print("Mi contenido es el siguiente: ", data)
 
+def existuser(self, id):
+    sql = ("SELECT COUNT(*) FROM `users` WHERE id = %s")
+    cursor.execute(sql, id)
+    data = cursor.fetchone()
+    return data == 0
+
 def updateuser(self, id, name, age, sex, latitude, longitude):
     sqlupdate = ("UPDATE `users` SET name = %s, age = %s, sex = %s, latitude = %s, longitude = %s WHERE id = %s")
     cursor.execute(sqlupdate, (name, age, sex, latitude, longitude, id))
