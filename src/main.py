@@ -279,7 +279,7 @@ def answers(bot, update, user_data, _early_response=[None]):
 def main():
     #949321682:AAECbZCBtEFHbLDYELQ2OHuFNfpnQcmp5J8 TEST1
     #942283486:AAGVxx31KxtIzMGgZkBZBRWoC5POwcrtRUw TEST2
-    token = "949321682:AAECbZCBtEFHbLDYELQ2OHuFNfpnQcmp5J8" #open('../token.txt').read().strip()
+    token = "942283486:AAGVxx31KxtIzMGgZkBZBRWoC5POwcrtRUw" #open('../token.txt').read().strip()
     print("el token es" + token)
     updater = Updater(token=token)
     dispatcher = updater.dispatcher
