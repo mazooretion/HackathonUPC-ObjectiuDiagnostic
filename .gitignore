@@ -3,3 +3,4 @@ input/
 data/
 Notebooks/
 .vscode/
+__pycache__/
