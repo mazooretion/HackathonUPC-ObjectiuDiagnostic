@@ -3,6 +3,8 @@ import telegram
 from telegram.ext import CommandHandler, MessageHandler, Updater, Filters, ConversationHandler
 from ruamel.yaml import YAML
 
+import server
+
 '''
 from chatterbot import ChatBotpip3
 from chatterbot.trainers import ListTrainer, ChatterBotCorpusTrainer
@@ -13,7 +15,6 @@ import traceback
 '''
 
 import os
-import server
 
 if os.path.exists('db.sqlite3'):
     os.remove('db.sqlite3')
@@ -201,7 +202,7 @@ def saveUser(bot, update, user_data):
         answer = update.message.text
         if(answer.startswith("1.")):
             #crear Usuario con los datos de user_data, si existe ya updatearlo (la logica de si insert o update la pondria en el archivo server)
-            server.create(userId, user_data.get("name"), user_data.get("age"), user_data.get("sex"), user_data.get("latitude"), user_data.get("longitude"))
+            server.create(server, userId, user_data.get("name"), user_data.get("age"), user_data.get("gender"), user_data.get("latitude"), user_data.get("longitude"))
             bot.send_message(chat_id=update.message.chat_id, text=translate("userSaved"))
         return SAVE_USER
 
