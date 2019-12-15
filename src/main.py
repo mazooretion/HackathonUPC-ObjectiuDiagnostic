@@ -13,6 +13,7 @@ import traceback
 '''
 
 import os
+import server
 
 if os.path.exists('db.sqlite3'):
     os.remove('db.sqlite3')
@@ -47,7 +48,7 @@ locations = {"GERMANY":         (50, 10),
              "TURKEY":          (39, 35),
              "LETONIA":         (56, 25)}
 
-PATH_TO_TRANSLATION_FILE = "rarehacks-master_02/language/translations.yml"
+PATH_TO_TRANSLATION_FILE = "language/translations.yml"
 
 '''
 trainer = ChatterBotCorpusTrainer(chatbot)
@@ -196,6 +197,7 @@ def saveUser(bot, update, user_data):
         answer = update.message.text
         if(answer.startswith("1.")):
             #crear Usuario con los datos de user_data, si existe ya updatearlo (la logica de si insert o update la pondria en el archivo server)
+            server.create(userID, user_data.get("name"), user_data.get("age"), user_data.get("sex"), user_data.get("latitude"), user_data.get("longitude"))
             bot.send_message(chat_id=update.message.chat_id, text=translate("userSaved"))
         return SAVE_USER
 
@@ -266,6 +268,7 @@ def answers(bot, update, user_data, _early_response=[None]):
         bot.send_message(chat_id=update.message.chat_id, text="💣{}".format(str(e)))
         '''
 def main():
+    #949321682:AAECbZCBtEFHbLDYELQ2OHuFNfpnQcmp5J8 POL
     token = "942283486:AAGVxx31KxtIzMGgZkBZBRWoC5POwcrtRUw" #open('../token.txt').read().strip()
     print("el token es" + token)
     updater = Updater(token=token)
