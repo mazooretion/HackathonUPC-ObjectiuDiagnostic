@@ -28,4 +28,3 @@ def updateuser(self, id, name, age, sex, latitude, longitude):
 
 # desconectar del servidor
 db.close()
-

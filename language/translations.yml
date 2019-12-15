@@ -1,0 +1,49 @@
+supportedLanguages: "en,es,cat"
+en:
+    languageNotSupported: "We are afraid your current language is not suported, we will procede in english and hope for the best ;)"
+    askForLocation: "We can offer specific advice to your area, would you like to share your location?"
+    askForGender: "What's your sex?"
+    askForAge: "What year were you born in?"
+    askForName: "What's your name?"
+    initialGreetings: "Hi! this is our bot interface for bitsXlaMarato hackathon, this greeting as well as all other text this bot sends can be changed through the label sistem \U0001F604"
+    sendLocation: "Send location!"
+    appCrashed: "Ups... something went wrong \U0001F604"
+    yes: "Yes!"
+    no: "No, thank you"
+    askForSaveUser:
+    userSaved:
+es:
+    askForLocation: "Podemos ofrecer ayuda personalizada para tu zona, te gustaria compartir tu ubicacion con nosotros?"
+    askForGender: "¿Cual es tu sexo?"
+    askForAge: "¿En que año nacistes?"
+    askForName: "¿Como te llamas?"
+    initialGreetings: "Hola! esta es nuestra interfície para el bot de la hackathon bitsXlaMarato, este saludo así como todos los textos enviados por este robot pueden ser personalizados mediante un sistema de etiquetas \U0001F604"
+    sendLocation: "¡Enviar ubicación!"
+    appCrashed: "Ups... algo no ha salido como esperavamos \U0001F604"
+    yes: "Si!"
+    no: "No, gracias"
+    askForSaveUser:
+    userSaved:
+cat:
+    askForLocation: "Podem oferir-te ajuda personalitzada per la teva zona, t'agradaria compartir la teva ubicació amb nosaltres?"
+    askForGender: "Quin es el teu sexe?"
+    askForAge: "Quin any vas neixer?"
+    askForName: "Com et dius?"
+    initialGreetings: "Hola! aquesta es la nostra interfície per el bot de la hackathon bitsXlaMarato, aquesta salutació així com tots els texts enviats per aquest robot poden ser personalitzats mitjançant un sistema d'etiquetes \U0001F604"
+    sendLocation: "¡Enviar ubicació!"
+    appCrashed: "Ups... quelcom no ha sortit com esperavem \U0001F604"
+    yes: "Si!"
+    no: "No, gracies"
+    askForSaveUser:
+    userSaved:
+dog:
+    askForLocation: "Guau guau guau guau guau guau guau guau guau guau , guau guau guau guau guau guau guau guau guau guau guau?"
+    askForGender: "Guau guau guau guau?"
+    askForAge: "Guau guau guau guau?"
+    askForName: "Guau guau guau ?"
+    initialGreetings: "Guau! guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau, guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau guau \U0001F604"
+    sendLocation: "¡Guau guau!"
+    appCrashed: "Guau... guau guau guau guau guau guau guau \U0001F604"
+    yes: "Guau!"
+    no: "Guau, guau"
+    askForSaveUser:
