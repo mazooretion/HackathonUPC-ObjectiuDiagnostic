@@ -133,17 +133,21 @@ def name(bot, update, user_data):
 def age(bot, update, user_data):
     try:
         age = update.message.text
-        user_data["age"] = age
-        
-        kb = [
-            [telegram.KeyboardButton("1. " + translate("Others"))],
-            [telegram.KeyboardButton("2. " + translate("Woman"))],
-            [telegram.KeyboardButton("3. " + translate("Man"))]
-        ]
-        kb_markup = telegram.ReplyKeyboardMarkup(kb)
-        bot.send_message(chat_id=update.message.chat_id, text=translate("askForGender"), reply_markup=kb_markup)
+        if(age.isdigit() and int(age) > 1900 and int(age) < 2017):
+            user_data["age"] = age
+            kb = [
+                [telegram.KeyboardButton("1. " + translate("Others"))],
+                [telegram.KeyboardButton("2. " + translate("Woman"))],
+                [telegram.KeyboardButton("3. " + translate("Man"))]
+            ]
+            kb_markup = telegram.ReplyKeyboardMarkup(kb)
+            bot.send_message(chat_id=update.message.chat_id, text=translate("askForGender"), reply_markup=kb_markup)
 
-        return GENDER
+            return GENDER
+        else:
+            bot.send_message(chat_id=update.message.chat_id, text=translate("askAgeAgain"))
+            return AGE
+
     except Exception as e:
         print(e)
         bot.send_message(chat_id=update.message.chat_id, text="💣{}".format(str(e)))
