@@ -63,6 +63,7 @@ NAME, AGE, GENDER, LOCATION, SAVE_USER = range(5)
 
 translator = {}
 codigoLenguaje = "en"
+userId = -1
 
 def translate(tag):
     translatedTag = translator.get(codigoLenguaje).get(tag)
@@ -85,6 +86,9 @@ def start(bot, update):
     try:
         global codigoLenguaje
         codigoLenguaje = update.effective_user.language_code
+        global userId
+        userId = update.effective_user.id
+
         supportedLanguages = translator.get("supportedLanguages").split(",")
         if(not codigoLenguaje in supportedLanguages):
             codigoLenguaje = "en"
@@ -152,7 +156,7 @@ def gender(bot, update, user_data):
         elif(answer.startswith("2.")):
             gender = "Woman"
         else:
-            answer = "Others"
+            gender = "Others"
         user_data["gender"] = gender
 
         kb = [[telegram.KeyboardButton("1. "+translate("yes"), request_location=True)], [telegram.KeyboardButton("2. "+translate("no"))]]
